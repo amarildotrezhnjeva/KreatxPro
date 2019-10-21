@@ -81,6 +81,7 @@ if (isset($_GET['logout'])) {
                     <li>
                         <a href="view_employers.php">View Employers</a>
                     </li>
+                    
 
                 </ul>
             </div>

@@ -1,4 +1,25 @@
 <?php include('functions.php');
+$mod_user=getUserById($_SESSION['user']['id']);
+	
+if(isset($_POST['save'])){
+    $username=$_POST['username'];
+    $email=$_POST['email'];
+    $password_1=$_POST['password_1'];
+    $password_2=$_POST['password_2'];
+    $department=$_POST['department'];
+    $photo=$_FILES['photo']['name'];
+ $photo_tmp=$_FILES['photo']['tmp_name'];
+ move_uploaded_file($photo_tmp,"images/$photo");
+$query= "UPDATE users SET";
+$query .="username ='{$username}' ,";
+$query .="email ='{$email}' ,";
+$query .="password_1 ='{$password_1}' ,";
+$query .="password_2 ='{$password_2}' ,";
+$query .="department ='{$department}' ,";
+$query .="photo ='{$photo}' ,";
+$query.="WHERE id='{$mod_user['id']}'";
+
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -49,7 +70,9 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                   
+                   <li><a href="index.php">
+                   Home</a>
+                   </li>
 
                 </ul>
             </div>
@@ -57,7 +80,7 @@
         </div>
         <!-- /.container -->
     </nav>
-    <form method="post" action="profile.php" enctype="multipart/form-data">
+    <form method="post" action="index.php" enctype="multipart/form-data">
     <?php echo display_error(); ?>
 	<div class="input-group">
 <label>

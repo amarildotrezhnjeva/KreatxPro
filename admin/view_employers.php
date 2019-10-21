@@ -11,6 +11,13 @@ if (isset($_GET['logout'])) {
 	unset($_SESSION['user']);
 	header("location: ../login.php");
 }
+//delete user/* 
+if(isset($_GET['delete'])){
+  $delete_id=$_GET['delete'];
+$delete_query="DELETE FROM users WHERE id={$delete_id}";
+$del_user_query=mysqli_query($db,$delete_query); 
+header("Location : view_employers.php");
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -77,6 +84,9 @@ if (isset($_GET['logout'])) {
                 <li>
                     <a href="view_employers.php">View Employers</a>
                 </li>
+                <li>
+                        <a href="index.php">Home</a>
+                    </li>
 
             </ul>
         </div>
@@ -120,6 +130,7 @@ if (isset($_GET['logout'])) {
    echo "<td> $department </td>";?>
 
  <td> <a href="edit.php?id=<?=$user_id;?>"> Edit </a></td>
+ <td> <a href="view_employers.php?delete=<?=$user_id;?>"> Delete </a></td>
 
  <?php  echo "</tr>";
    }?>

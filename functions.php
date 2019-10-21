@@ -185,7 +185,7 @@ function isAdmin()
 	}else{
 		return false;
 	}
-}
+}/*
 if(isset($_POST['edit_btn'])){
 	global $db;
 if(isLoggedIn()&&!isAdmin()){
@@ -193,16 +193,16 @@ $logged_in_user_id=$_SESSION['user']['id'];
 
 	
 	edit($logged_in_user_id);}
-	elseif(isAdmin){
+	elseif(isAdmin()){
 		$loged_in_admin_id=$_SESSION['user']['id'];
 		editAdmin($loged_in_admin_id);
 	}
 	
-}
-
+}*/
+/*
 function edit($id){
 $mod_user=getUserById($id);
-	header('location: edit.php');
+	
 	if(isset($_POST['save'])){
 		$username=$_POST['username'];
 		$email=$_POST['email'];
@@ -249,5 +249,5 @@ $mod_user=getUserById($id);
 			}}
 		
 		
-
+*/
 

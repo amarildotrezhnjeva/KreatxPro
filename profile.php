@@ -1,8 +1,8 @@
 <?php
 include('functions.php');
-//if (!isLoggedIn()) {
-//	$_SESSION['msg'] = "You must log in first";
-//	header('location: login.php');
+if (!isLoggedIn()) {
+	$_SESSION['msg'] = "You must log in first";
+	header('location: login.php');}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -72,7 +72,7 @@ Licensed under MIT
 			<div class="profile-sidebar">
 				<!-- SIDEBAR USERPIC -->
 				<div class="profile-userpic">
-					<img src="http://keenthemes.com/preview/metronic/theme/assets/admin/pages/media/profile/profile_user.jpg" class="img-responsive" alt="">
+					<img src="images/$photo" class="img-responsive" alt="">
 				</div>
 				<!-- END SIDEBAR USERPIC -->
 				<!-- SIDEBAR USER TITLE -->
